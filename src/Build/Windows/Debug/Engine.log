@@ -1,0 +1,2 @@
+﻿  main.cpp
+e:\engine\src\misc\compilercheck.h(16): fatal error C1189: #error:  "We need AVX2!"

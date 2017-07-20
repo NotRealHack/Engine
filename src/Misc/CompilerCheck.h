@@ -1,3 +1,5 @@
+#pragma once
+
 //This file MUST be included at least once in order to check our compilation environment!
 
 #ifdef _MSC_VER
@@ -8,10 +10,7 @@
 #  error "Exception Handling? What is that? And why do I need it? Lol"
 # endif
 # ifdef _DLL
-#  error "This won't be a dll file!"
-# endif
-# ifndef __AVX2__
-#  error "We need AVX2!"
+#  error "This won't be a dll!"
 # endif
 # ifndef _WIN64
 #  error "This is an Win64 Program!"
