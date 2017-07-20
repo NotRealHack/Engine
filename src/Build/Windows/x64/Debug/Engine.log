@@ -1,3 +1,7 @@
 ﻿  main.cpp
-  Engine.vcxproj -> E:\Engine\src\Build\Windows\x64\Debug\Engine.exe
-  Engine.vcxproj -> E:\Engine\src\Build\Windows\x64\Debug\Engine.pdb (Partial PDB)
+e:\engine\src\main.h(49): error C2653: "DX": Keine Klasse oder Namespace
+e:\engine\src\main.h(49): error C2065: "DeviceResources": nichtdeklarierter Bezeichner
+e:\engine\src\main.h(49): error C2923: "std::shared_ptr": "DeviceResources" ist kein gültiges Vorlage-Typargument für den _Ty-Parameter.
+e:\engine\src\main.cpp(16): error C2653: "DX": Keine Klasse oder Namespace
+e:\engine\src\main.cpp(16): error C2065: "DeviceResources": nichtdeklarierter Bezeichner
+e:\engine\src\main.cpp(16): error C2923: "std::shared_ptr": "DeviceResources" ist kein gültiges Vorlage-Typargument für den _Ty-Parameter.
