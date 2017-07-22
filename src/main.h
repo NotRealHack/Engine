@@ -13,9 +13,9 @@
 # include <windowsx.h>
 # include <d3d9.h>
 # include <d3d12.h>
-# include <d3d.h>
 # pragma comment (lib,"d3d9.lib")
 # pragma comment (lib,"d3d12.lib")
+# include <WinSock2.h>
 # pragma comment (lib,"ws2_32.lib")
 # include <tchar.h>
 # include <ImageHlp.h>
@@ -25,7 +25,6 @@
 # include <stdlib.h>
 # include <malloc.h>
 # include <new.h>
-# include <memory>
 #elif __GNUC__
 # include <iostream>
 # include <sys/socket.h>
@@ -41,11 +40,3 @@
 # include <linux/memory.h>
 # include <linux/netfilter.h>
 #endif
-
-namespace NRHackEngine {
-	class DXInit {
-	public:
-		DXInit();
-		void CreateRenderers(const std::shared_ptr<DX::DeviceResources>&deviceResources);
-	};
-}

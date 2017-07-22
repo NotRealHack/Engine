@@ -1,31 +1,34 @@
 #pragma once
 
-//This file MUST be included at least once in order to check our compilation environment!
+//This file MUST be included at least once
 
 #ifdef _MSC_VER
 # ifdef _KERNEL_MODE
-#  error "What are you doing here? A kernel mode game? I don't believe you :)"
+#  error "What are you doing here? A kernel mode game? I don't believe that's neccesary lol"
 # endif
 # ifndef _CPPUNWIND
-#  error "Exception Handling? What is that? And why do I need it? Lol"
+#  error
 # endif
 # ifdef _DLL
-#  error "This won't be a dll!"
+#  error
+# endif
+# ifndef __AVX2__
+#  error
 # endif
 # ifndef _WIN64
-#  error "This is an Win64 Program!"
+#  error
 # endif
 #elif __GNUC__
 # ifdef __ELF__
-#  error "This shall not be an ELF program!"
+#  error
 # endif
 # ifdef __GNUC_GNU_INLINE__
-#  warning "Handling inline functions in GNU90 standard can be painful..."
+#  warning
 # endif
 # ifndef __EXCEPTIONS
-#  error "Exception handling? In an program? Why? Lol"
+#  error
 # endif
 # ifndef __SSP__ || __SSP_ALL__ || __SSP_STRONG__ || __SSP_EXPLICIT__
-#  error "Stack protecting? Never heard of that^^ (I WANT IT)"
+#  error
 # endif
 #endif
