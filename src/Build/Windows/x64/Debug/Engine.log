@@ -1,7 +1,38 @@
-﻿  main.cpp
-e:\engine\src\main.h(49): error C2653: "DX": Keine Klasse oder Namespace
-e:\engine\src\main.h(49): error C2065: "DeviceResources": nichtdeklarierter Bezeichner
-e:\engine\src\main.h(49): error C2923: "std::shared_ptr": "DeviceResources" ist kein gültiges Vorlage-Typargument für den _Ty-Parameter.
-e:\engine\src\main.cpp(16): error C2653: "DX": Keine Klasse oder Namespace
-e:\engine\src\main.cpp(16): error C2065: "DeviceResources": nichtdeklarierter Bezeichner
-e:\engine\src\main.cpp(16): error C2923: "std::shared_ptr": "DeviceResources" ist kein gültiges Vorlage-Typargument für den _Ty-Parameter.
+﻿  EArray.cpp
+e:\engine\src\core\array\earray.h(19): error C2988: Unerkannte Vorlagendeklaration/-definition
+  e:\engine\src\core\array\earray.h(207): note: Siehe Verweis auf die Klasse Vorlage-Instanziierung "EArray<InType,InAlloc>", die kompiliert wird.
+e:\engine\src\core\array\earray.h(19): error C2143: Syntaxfehler: Es fehlt ";" vor "<"
+e:\engine\src\core\array\earray.h(19): error C2433: "EEnableIf": "inline" bei der Deklaration von Daten nicht zulässig
+e:\engine\src\core\array\earray.h(19): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+e:\engine\src\core\array\earray.h(19): error C2238: Unerwartete(s) Token vor ";"
+e:\engine\src\core\array\earray.h(19): error C2059: Syntaxfehler: "<"
+e:\engine\src\core\array\earray.h(19): error C2653: "EngineArray": Keine Klasse oder Namespace
+e:\engine\src\core\array\earray.h(20): error C2334: Unerwartete(s) Token vor "{"; sichtbarer Funktionstext wird übersprungen
+e:\engine\src\core\array\earray.h(30): error C2988: Unerkannte Vorlagendeklaration/-definition
+e:\engine\src\core\array\earray.h(30): error C2143: Syntaxfehler: Es fehlt ";" vor "<"
+e:\engine\src\core\array\earray.h(30): error C2433: "EEnableIf": "inline" bei der Deklaration von Daten nicht zulässig
+e:\engine\src\core\array\earray.h(30): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+e:\engine\src\core\array\earray.h(30): error C2238: Unerwartete(s) Token vor ";"
+e:\engine\src\core\array\earray.h(30): error C2059: Syntaxfehler: "<"
+e:\engine\src\core\array\earray.h(30): error C2653: "EngineArray": Keine Klasse oder Namespace
+e:\engine\src\core\array\earray.h(31): error C2334: Unerwartete(s) Token vor "{"; sichtbarer Funktionstext wird übersprungen
+e:\engine\src\core\array\earray.h(37): error C2988: Unerkannte Vorlagendeklaration/-definition
+e:\engine\src\core\array\earray.h(37): error C2143: Syntaxfehler: Es fehlt ";" vor "<"
+e:\engine\src\core\array\earray.h(37): error C2433: "EEnableIf": "inline" bei der Deklaration von Daten nicht zulässig
+e:\engine\src\core\array\earray.h(37): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+e:\engine\src\core\array\earray.h(37): error C2238: Unerwartete(s) Token vor ";"
+e:\engine\src\core\array\earray.h(37): error C2059: Syntaxfehler: "<"
+e:\engine\src\core\array\earray.h(37): error C2653: "EngineArray": Keine Klasse oder Namespace
+e:\engine\src\core\array\earray.h(38): error C2334: Unerwartete(s) Token vor "{"; sichtbarer Funktionstext wird übersprungen
+e:\engine\src\core\array\earray.h(45): error C2988: Unerkannte Vorlagendeklaration/-definition
+e:\engine\src\core\array\earray.h(45): error C2143: Syntaxfehler: Es fehlt ";" vor "<"
+e:\engine\src\core\array\earray.h(45): error C2433: "EEnableIf": "inline" bei der Deklaration von Daten nicht zulässig
+e:\engine\src\core\array\earray.h(45): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+e:\engine\src\core\array\earray.h(45): error C2238: Unerwartete(s) Token vor ";"
+e:\engine\src\core\array\earray.h(45): error C2059: Syntaxfehler: "<"
+e:\engine\src\core\array\earray.h(45): error C2653: "EngineArray": Keine Klasse oder Namespace
+e:\engine\src\core\array\earray.h(46): error C2334: Unerwartete(s) Token vor "{"; sichtbarer Funktionstext wird übersprungen
+e:\engine\src\core\array\earray.h(54): error C2988: Unerkannte Vorlagendeklaration/-definition
+e:\engine\src\core\array\earray.h(54): error C2059: Syntaxfehler: "return"
+e:\engine\src\core\array\earray.h(54): error C2238: Unerwartete(s) Token vor ";"
+e:\engine\src\core\array\earray.h(58): error C2144: Syntaxfehler: "int32_t" sollte auf ";" folgen

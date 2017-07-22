@@ -3,6 +3,10 @@
 #ifndef __CORE_COREDEFINES_H__
 #define __CORE_COREDEFINES_H__
 
+#include "CoreTypes.h"
+
+#include <initializer_list>
+
 #define STUBBED(x)																				\
 	do {																						\
 		static bool WeHaveAlreadySeenThisStubbedSection = false;								\
@@ -13,5 +17,7 @@
 	}
 
 #define STANDALONE_SEEKFREE_SUFFIX TEXT("_SF")
+
+const PUserID PUSERID_NONE = INDEX_NONE;
 
 #endif

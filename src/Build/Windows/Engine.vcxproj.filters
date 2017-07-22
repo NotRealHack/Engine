@@ -10,14 +10,14 @@
     <Filter Include="Targets">
       <UniqueIdentifier>{a7682fb3-364e-462a-a7c5-4f44d41cca83}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameLoad %28main%29">
+    <Filter Include="EngineLaunch">
       <UniqueIdentifier>{c91b5435-cf09-4ec6-89eb-dbd3a9259a8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Array">
+      <UniqueIdentifier>{2a5baccc-ff9d-4686-8eb8-13acc7cc7d46}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\main.h">
-      <Filter>GameLoad %28main%29</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Core\Core.h">
       <Filter>Core</Filter>
     </ClInclude>
@@ -37,10 +37,24 @@
     <ClInclude Include="..\..\Platform\Windows\WindowsTargetSettings.h">
       <Filter>Targets</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\main.h" />
+    <ClInclude Include="..\..\Launch\EngineLaunch.h">
+      <Filter>EngineLaunch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Misc\Engine.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Array\EArray.h">
+      <Filter>Core\Array</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\main.cpp">
-      <Filter>GameLoad %28main%29</Filter>
+    <ClCompile Include="..\..\main.cpp" />
+    <ClCompile Include="..\..\Launch\EngineLaunch.cpp">
+      <Filter>EngineLaunch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Array\EArray.cpp">
+      <Filter>Core\Array</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

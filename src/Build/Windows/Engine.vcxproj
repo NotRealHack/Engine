@@ -121,16 +121,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Core\Array\EArray.h" />
     <ClInclude Include="..\..\Core\Core.h" />
     <ClInclude Include="..\..\Core\CoreDefines.h" />
     <ClInclude Include="..\..\Core\CoreTypes.h" />
+    <ClInclude Include="..\..\Launch\EngineLaunch.h" />
     <ClInclude Include="..\..\main.h" />
     <ClInclude Include="..\..\Misc\compiler.h" />
     <ClInclude Include="..\..\Misc\CompilerCheck.h" />
+    <ClInclude Include="..\..\Misc\Engine.h" />
     <ClInclude Include="..\..\Platform\Windows\WindowsTargetSettings.h" />
     <ClInclude Include="..\..\ProgramInfo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Core\Array\EArray.cpp" />
+    <ClCompile Include="..\..\Launch\EngineLaunch.cpp" />
     <ClCompile Include="..\..\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

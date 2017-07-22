@@ -15,7 +15,7 @@
 # include <d3d12.h>
 # pragma comment (lib,"d3d9.lib")
 # pragma comment (lib,"d3d12.lib")
-# include <WinSock2.h>
+//# include <WinSock2.h>
 # pragma comment (lib,"ws2_32.lib")
 # include <tchar.h>
 # include <ImageHlp.h>
