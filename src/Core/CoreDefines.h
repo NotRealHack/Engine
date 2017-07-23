@@ -5,7 +5,10 @@
 
 #include "CoreTypes.h"
 
+#include "Array\EArray.h"
+
 #include <initializer_list>
+#include <stdio.h>
 
 #define STUBBED(x)																				\
 	do {																						\

@@ -47,6 +47,30 @@ private:
 		ToArray.CopyToEmpty(FromArray.GetData(), FromArray.Num(), prevMax, extraAlloc);
 	}
 
+	inline bool RemoveAtImpl(int32_t pos, int32_t cnt, bool allowShrink) {
+		if (IsValidIndex(pos) && cnt > 0) {
+			//TODO: Invariant checking
+			if (!(pos + cnt <= ArrayNum)) {
+				return false;
+			}
+			DestructItems(GetData() + pos, cnt);
+			int32_t n_mv = ArrayNum - pos - cnt;
+			if (n_mv != 0) {
+				Memory::MemMove(
+					(uint8_t*)AllocatorInstance.GetAllocation() + (pos) * sizeof(ElementType),
+					(uint8_t*)AllocatorInstance.GetAllocation() + (pos + cnt) * sizeof(ElementType),
+					n_mv * sizeof(ElementType)
+				);
+			}
+			ArrayNum -= cnt;
+			if (allowShrink) {
+				ResizeShrink();
+			}
+			return true;
+		}
+		return false;
+	}
+
 public:
 	//Helper functions
 	//Is index valid
@@ -77,6 +101,14 @@ public:
 	//Get amount of extra allocation in array
 	inline uint64_t GetExtraAlloc() const {
 		return ArrayMax - ArrayNum;
+	}
+
+	//Check that addr is not part of an element within the container
+	inline bool CheckAddress(const ElementType* addr) {
+		if (addr < GetData() || addr >= (GetData() + ArrayMax)) {
+			return true;
+		}
+		return false;
 	}
 
 public:
@@ -286,6 +318,29 @@ public:
 		InsertUninitialized(pos, cnt);
 		ConstructItems<ElementType>(GetData() + pos, ptr, cnt);
 	}
+	inline int32_t Insert(ElementType&& item, int32_t pos) {
+		CheckAddress(&item);
+
+		InsertUninitialized(pos, 1);
+		new(GetData() + pos) ElementType(MoveTemp(item));
+		return pos;
+	}
+	inline int32_t Insert(ElementType& item, int32_t pos) {
+		CheckAddress(&item);
+
+		InsertUninitialized(pos, 1);
+		new(GetData() + pos) ElementType(item);
+		return pos;
+	}
+
+	//Remove element at pos (and possibly shrink the array)
+	inline void RemoveAt(int32_t pos) {
+		RemoveAtImpl(pos, 1, true);
+	}
+	template<typename CountType> inline void RemoveAt(int32_t pos, CountType cnt, bool shrink) { //last
+		static_assert(!EAreTypesEqual<CountType, bool>::Value, "EArray::RemoveAt: unexpected bool passed as cnt");
+		RemoveAtImpl(pos, cnt, shrink);
+	}
 
 public:
 	//Operators
@@ -327,6 +382,12 @@ public:
 		return !(*this == other);
 	}
 	//TODO: Serialization operator (<<)
+};
+
+template<typename E> struct EIsArray {
+	enum {
+		Value = false
+	};
 };
 
 #endif

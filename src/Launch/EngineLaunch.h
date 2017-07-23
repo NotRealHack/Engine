@@ -35,7 +35,28 @@ public:
 	static void AppExit();
 
 protected:
-	
+	EArray<float> FrameTimes;
+	double TotalTickTime;
+	double MaxTickTime;
+	uint64_t MaxFrameCounter;
+	uint32_t LastFrameCycles;
+	PendingCleanupObjects* PCleanupObjects;
+
+private:
+	EngineService* EngineSvc;
+	ESharedPtr<IClassSessionService> SessionSvc;
 };
+
+extern class FClassEngineLoop GClassEngineLoop;
+
+#ifdef _MSC_VER
+int32_t GuardedMain(char* cmd, HINSTANCE hInst, HINSTANCE hPrInst, int32_t nCmdShow);
+int32_t GuardedMainWrapper(char* cmd, HINSTANCE hInst, HINSTANCE hPrInst, int32_t nCmdShow);
+#else
+int32_t GuardedMain(const char* cmd);
+int32_t GuardedMainWrapper(const char* cmd)
+#endif
+
+void SetupEnvironment();
 
 #endif

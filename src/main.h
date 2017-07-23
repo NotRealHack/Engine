@@ -1,6 +1,6 @@
 #pragma once
 
-//This is the header file for main.cpp (containing gameloading routines)
+//This is the header file for main.cpp
 
 //Are our compiler settings right?
 #include "Misc\CompilerCheck.h"
