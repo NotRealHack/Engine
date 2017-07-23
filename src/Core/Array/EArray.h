@@ -255,6 +255,37 @@ public:
 		}
 		return false;
 	}
+	
+	//Insert elements at position pos
+	inline int32_t Insert(std::initializer_list<ElementType> InitList, const int32_t pos) {
+		InsertUninitialized(pos, (int32_t)InitList.size());
+		ElementType* data = (ElementType*)AllocatorInstance.GetAllocation();
+		
+		int32_t i_pos = pos;
+		for (const ElementType &Element : InitList) {
+			new (data + i_pos++) ElementType(Element);
+		}
+		return pos;
+	}
+	inline int32_t Insert(const TArray<ElementType> &items, const int32 pos) {
+		if (!(this != &items)) {
+			return NULL;
+		}
+		InsertUninitialized(pos, items.Num());
+		ElementType* data = (ElementType*)AllocatorInstance.GetAllocation();
+		int32_t i_pos = pos;
+		for (auto it = items.CreateConstIterator(); it; ++it) {
+			new (data + i_pos++)ElementType(MoveTemp(*it));
+		}
+		return pos;
+	}
+	inline int32_t Insert(const ElementType* ptr, int32_t cnt, int32_t pos) {
+		if (!(ptr != nullptr)) {
+			return NULL;
+		}
+		InsertUninitialized(pos, cnt);
+		ConstructItems<ElementType>(GetData() + pos, ptr, cnt);
+	}
 
 public:
 	//Operators
